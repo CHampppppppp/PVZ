@@ -38,7 +38,7 @@ void Zombie::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
                 line[j << 2] = 200;
         }
     }
-    painter->drawImage(QRectF(-70, -100, 140, 140), image);
+    painter->drawImage(QRectF(-70, -100, 140, 140), image);//将image画到矩形QRectF内
     if (head)
     {
         image = head->currentImage();
