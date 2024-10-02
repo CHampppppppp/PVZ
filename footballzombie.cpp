@@ -5,7 +5,7 @@ FootballZombie::FootballZombie()
     hp = 1670;
     atk = 100 * 33 / 1000;
     speed = 80.0 * 33 / 1000 / 2.5;
-    setMovie(":/images/FootballZombieWalk.gif");
+    setMovie(":/images/FootballZombieWalk.gif");//将一个movie指针指向zombie
 }
 
 void FootballZombie::advance(int phase)
@@ -15,18 +15,18 @@ void FootballZombie::advance(int phase)
     update();
     if (hp <= 0)
     {
-        if (state < 2)
+        if (state < 2)//未死亡
         {
-            state = 2;
+            state = 2;//判定死亡
             setMovie(":/images/FootballZombieDie.gif");
-            setHead(":/images/ZombieHead.gif");
+            setHead(":/images/ZombieHead.gif");//僵尸头掉落
 
         }
-        else if (movie->currentFrameNumber() == movie->frameCount() - 1)
+        else if (movie->currentFrameNumber() == movie->frameCount() - 1)//死亡gif播放完删除
             delete this;
         return;
     }
-    QList<QGraphicsItem *> items = collidingItems();
+    QList<QGraphicsItem *> items = collidingItems();//QGraphics中重叠的items
     if (!items.isEmpty())
     {
         Plant *plant = qgraphicsitem_cast<Plant *>(items[0]);
