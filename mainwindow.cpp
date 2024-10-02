@@ -31,8 +31,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     view->resize(902, 602);
     view->setRenderHint(QPainter::Antialiasing);
     view->setBackgroundBrush(QPixmap(":/images/Background.jpg"));
-    view->setCacheMode(QGraphicsView::CacheBackground);
-    view->setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
+    view->setCacheMode(QGraphicsView::CacheBackground);//？？？
+    view->setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);//？？？
     connect(timer, &QTimer::timeout, scene, &QGraphicsScene::advance);
     connect(timer, &QTimer::timeout, this, &MainWindow::addZombie);
     connect(timer, &QTimer::timeout, this, &MainWindow::check);
