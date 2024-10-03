@@ -33,7 +33,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     view->setBackgroundBrush(QPixmap(":/images/Background.jpg"));
     view->setCacheMode(QGraphicsView::CacheBackground);//？？？
     view->setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);//？？？
-    connect(timer, &QTimer::timeout, scene, &QGraphicsScene::advance);
+    connect(timer, &QTimer::timeout, scene, &QGraphicsScene::advance);/QGscene_advance对应QGitem_advance
     connect(timer, &QTimer::timeout, this, &MainWindow::addZombie);
     connect(timer, &QTimer::timeout, this, &MainWindow::check);
     sound->play();
