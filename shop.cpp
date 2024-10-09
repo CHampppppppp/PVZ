@@ -28,7 +28,7 @@ void Shop::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
     font.setPointSizeF(15);
     painter->setFont(font);
     painter->drawText(QRectF(-255, 18, 65, 22), Qt::AlignCenter, QString::number(sun));
-    painter->drawPoint(-220, 0);
+    painter->drawPoint(-220, 0);//what's the point of it???
 }
 
 void Shop::advance(int phase)
